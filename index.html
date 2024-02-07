@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-US" class="sl-theme-dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Buildless</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/light.css"
+  />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.11.2/cdn/themes/dark.css"
+  />
+  <style>
+    :not(:defined) {
+      visibility: hidden;
+    }
+    #app {
+      margin: 1em;
+      font-family: var(--sl-font-sans)!important;
+      font-size: var(--sl-font-size-medium);
+    }
+  </style>
+  <script type="module" src="./components/bl-progress-bar.js"></script>
+  <script type="module" src="./components/image-feed.js"></script>
+  <script type="module" src="./lib/store.js"></script>
+  <script>
+    // main()
+    const main = () => {
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const images = document.createElement('image-feed');
+        document.querySelector('#app').appendChild(images);
+      });
+    };
+
+    main();
+  </script>
+</head>
+<body>
+  <!-- <bl-progress-bar></bl-progress-bar> -->
+  <div id="app">
+  </div>
+</body>
+</html>
